@@ -18,11 +18,6 @@ async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
 bot.remove_command('help')
 
-discord.utils.setup_logging()
-@bot.event
-async def setup_hook() -> None:
-    bot.db: asyncpg.Pool = await asyncpg.create_pool(os.getenv('DBURL'))
-
 ######################################################
 #######################COMMANDS#######################
 ######################################################
