@@ -9,11 +9,7 @@ class test2(commands.Cog):
     @commands.command()
     @commands.cooldown(1, 1, commands.BucketType.user)
     async def test2(self, ctx):
-        await ctx.send('1')
-        
-        var = await (self.bot.db.fetch('SELECT matchstarted FROM match WHERE matchid = $1', (ctx.channel.id)))[0]['matchstarted']
-        await ctx.send(var)
-        await ctx.send('2')
+        await ctx.send('SHIT IS WORKING')
 
 async def setup(bot):
     await bot.add_cog(test2(bot))
